@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="articleApp">
+<head>
+    <meta charset="UTF-8">
+    <title>article</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="/public/js/article.js"></script>
+</head>
+<body ng-controller="tableCtrl">
+  <div>
+    <h1>List Page</h1>
+    <input type="button" onclick="location.href='/insert'" value="새글작성"/>
+    <hr>
+  </div>
+
+  <form action="/edit" method="get">
+    <table>
+      <thead>
+        <tr>
+          <th>제목</th>
+          <th>내용</th>
+          <th>기능</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- angular 반복문 -->
+        <tr ng-repeat="article in articles">
+          <input type="hidden" value="<%= {{article._id}} %>" />
+          <td>{{article.title}}</td>
+          <td>{{article.content}}</td>
+          <td><input type="submit" value="수정"/></td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+
+</body>
+</html>

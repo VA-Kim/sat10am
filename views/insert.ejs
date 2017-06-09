@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="articleApp">
+<head>
+    <meta charset="UTF-8">
+    <title>article</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="/public/js/article.js"></script>
+</head>
+<body ng-controller="tableCtrl">
+  <!-- <h1>여긴 입력을 해주세요.</h1>
+  <form action="/">
+    <input type="text" id="title"/>
+    <input type="text" id="content"/>
+    <input ng-click="gogo()" type="submit"/>
+  </form> -->
+  <h1>Insert Page</h1>
+  <hr />
+  <form method="get" action="/">
+    <fieldset>
+      <legend>INSERT DATA</legend>
+      <table>
+        <tr>
+          <td><label>제목</label></td>
+          <td><input type="text" id="title" /></td>
+        </tr>
+        <tr>
+          <td><label>내용</label></td>
+          <td><input type="text" id="content" /></td>
+        </tr>
+      </table>
+      <input ng-click="gogo()" type="submit"/>
+    </fieldset>
+  </form>
+
+</body>
+</html>
